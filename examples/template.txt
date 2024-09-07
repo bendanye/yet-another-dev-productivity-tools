@@ -1,0 +1,7 @@
+--example 1
+hello this is from
+    {REPLACE}
+continue pls
+
+--example 2
+insert into table (id, col2) values ({INCREMENT_NUM_FROM_1}, {REPLACE});
