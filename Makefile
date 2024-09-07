@@ -2,7 +2,7 @@ run-main:
 	streamlit run main.py
 
 run-template:
-	streamlit run pages/list_conversion.py
+	streamlit run pages/template.py
 
 run-transformation:
 	streamlit run pages/transformation.py
