@@ -18,3 +18,25 @@ pip install -r requirements.txt
 ```shell
 streamlit run main.py
 ```
+
+## Features
+
+### Copy Json Inside Json
+
+![copy_json](./screenshots/copy_json.png)
+
+### List Conversion
+
+![list_conversion](./screenshots/list_conversion.png)
+
+### Template
+
+![template](./screenshots/template.png)
+
+### String Transformation
+
+![transformation](./screenshots/transformation.png)
+
+## Impetus
+
+I always find it there will be always tasks that need to manipulate lines so i built this application is for my own convenience to help me manipulate lines easily as well as learning Streamlit.
