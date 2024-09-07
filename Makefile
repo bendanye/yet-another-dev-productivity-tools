@@ -1,2 +1,14 @@
 run-main:
 	streamlit run main.py
+
+run-template:
+	streamlit run pages/list_conversion.py
+
+run-transformation:
+	streamlit run pages/transformation.py
+
+run-list-conversiion:
+	streamlit run pages/list_conversion.py
+
+run-copy-json:
+	streamlit run pages/copy_json_inside_json.py
