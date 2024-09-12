@@ -7,15 +7,25 @@ At least Python 3.7
 
 ## Project Setup & Commands
 
+### Install venv
+
+```shell
+python3 -m venv .venv
+```
+
 ### Install required library
 
 ```shell
+source .venv/bin/activate
+
 pip install -r requirements.txt
 ```
 
 ### Run the program
 
 ```shell
+source .venv/bin/activate
+
 streamlit run main.py
 ```
 
