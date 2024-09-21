@@ -12,6 +12,7 @@ page = st_navbar(
         "Template",
         "Duplicate",
         "List conversion",
+        "Compare Lists",
         "Copy Json inside json",
     ],
     options=OPTIONS,
@@ -23,6 +24,7 @@ functions = {
     "Template": pg.show_template,
     "Duplicate": pg.show_duplicate,
     "List conversion": pg.show_list_conversion,
+    "Compare Lists": pg.show_compare_lists,
     "Copy Json inside json": pg.show_copy_json,
 }
 

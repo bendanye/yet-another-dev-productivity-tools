@@ -15,3 +15,6 @@ run-copy-json:
 
 run-duplicate:
 	streamlit run pages/duplicate.py
+
+run-compare-lists:
+	streamlit run pages/compare_lists.py
