@@ -10,6 +10,7 @@ page = st_navbar(
         "Home",
         "String Transformation",
         "Template",
+        "Duplicate",
         "List conversion",
         "Copy Json inside json",
     ],
@@ -20,6 +21,7 @@ functions = {
     "Home": pg.show_home,
     "String Transformation": pg.show_transformation,
     "Template": pg.show_template,
+    "Duplicate": pg.show_duplicate,
     "List conversion": pg.show_list_conversion,
     "Copy Json inside json": pg.show_copy_json,
 }

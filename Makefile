@@ -12,3 +12,6 @@ run-list-conversiion:
 
 run-copy-json:
 	streamlit run pages/copy_json_inside_json.py
+
+run-duplicate:
+	streamlit run pages/duplicate.py
