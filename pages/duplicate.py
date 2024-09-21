@@ -31,15 +31,34 @@ def show_duplicate():
         left, right = col2.columns(2)
         split_str = left.text_input("Split Str")
         index = right.text_input("Index to get")
-        if split_str and index and enter_list:
+        selected_result_option = left.radio(
+            "Result by",
+            ["Whole Line", "Index"],
+            index=1,
+        )
+        if split_str and index and enter_list and selected_result_option:
             output = ""
-            unique_lines = set()
-            for item in enter_list.split("\n"):
-                split_item = item.split(split_str)[int(index)]
-                if split_item in unique_lines:
-                    output += split_item + "\n"
+            if selected_result_option == "Index":
+                unique_lines = set()
+                for item in enter_list.split("\n"):
+                    split_item = item.split(split_str)[int(index)]
+                    if split_item in unique_lines:
+                        output += split_item + "\n"
 
-                unique_lines.add(split_item)
+                    unique_lines.add(split_item)
+
+            elif selected_result_option == "Whole Line":
+                dict = {}
+                for item in enter_list.split("\n"):
+                    split_item = item.split(split_str)[int(index)]
+                    records = dict.get(split_item, [])
+                    records.append(item)
+                    dict[split_item] = records
+
+                for key in dict:
+                    if len(dict[key]) > 1:
+                        for item in dict[key]:
+                            output += item + "\n"
 
             if output == "":
                 output = "No duplicate"
