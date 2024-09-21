@@ -18,3 +18,6 @@ run-duplicate:
 
 run-compare-lists:
 	streamlit run pages/compare_lists.py
+
+run-yaml-key-comparator:
+	streamlit run pages/yaml_key_comparator_page.py

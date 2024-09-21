@@ -14,6 +14,7 @@ page = st_navbar(
         "List conversion",
         "Compare Lists",
         "Copy Json inside json",
+        "Compare Yaml Keys",
     ],
     options=OPTIONS,
 )
@@ -26,6 +27,7 @@ functions = {
     "List conversion": pg.show_list_conversion,
     "Compare Lists": pg.show_compare_lists,
     "Copy Json inside json": pg.show_copy_json,
+    "Compare Yaml Keys": pg.show_yaml_key_comparator,
 }
 
 if "page" in st.query_params:

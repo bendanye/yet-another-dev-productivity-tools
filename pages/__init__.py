@@ -5,3 +5,4 @@ from pages.template import show_template
 from pages.transformation import show_transformation
 from pages.duplicate import show_duplicate
 from pages.compare_lists import show_compare_lists
+from pages.yaml_key_comparator_page import show_yaml_key_comparator
