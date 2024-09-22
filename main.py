@@ -3,7 +3,32 @@ from streamlit_navigation_bar import st_navbar
 import streamlit as st
 import pages as pg
 
+st.set_page_config(initial_sidebar_state="collapsed")
+
 OPTIONS = {"show_menu": False, "show_sidebar": False, "hide_nav": True}
+
+STYLES = {
+    "nav": {
+        "background-color": "royalblue",
+        "justify-content": "left",
+    },
+    "div": {
+        "max-width": "90rem",
+    },
+    "img": {
+        "padding-right": "14px",
+    },
+    "span": {
+        "color": "white",
+        "padding": "14px",
+    },
+    "active": {
+        "background-color": "white",
+        "color": "var(--text-color)",
+        "font-weight": "normal",
+        "padding": "14px",
+    },
+}
 
 page = st_navbar(
     [
@@ -17,6 +42,7 @@ page = st_navbar(
         "Compare Yaml Keys",
         "URL Query Params",
     ],
+    styles=STYLES,
     options=OPTIONS,
 )
 
