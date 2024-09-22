@@ -21,3 +21,6 @@ run-compare-lists:
 
 run-yaml-key-comparator:
 	streamlit run pages/yaml_key_comparator_page.py
+
+run-url-query-params:
+	streamlit run pages/url_query_params.py
