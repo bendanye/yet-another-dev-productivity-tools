@@ -24,3 +24,6 @@ run-yaml-key-comparator:
 
 run-url-query-params:
 	streamlit run pages/url_query_params.py
+
+run-vlookup:
+	streamlit run pages/vlookup.py
