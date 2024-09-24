@@ -1,5 +1,7 @@
 import streamlit as st
 
+from pages.splitter import split
+
 
 def show_compare_lists():
     st.title("Compare Lists")
@@ -19,8 +21,8 @@ def show_compare_lists():
 
     if list_1_input and list_2_input:
         with fields_columns[2]:
-            list_1 = [item for item in list_1_input.split("\n")]
-            list_2 = [item for item in list_2_input.split("\n")]
+            list_1 = [item for item in split(list_1_input)]
+            list_2 = [item for item in split(list_2_input)]
             results = list(set(list_1) - set(list_2))
             if results:
                 output = ""

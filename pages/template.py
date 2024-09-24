@@ -1,6 +1,8 @@
 import streamlit as st
 import re
 
+from pages.splitter import split
+
 
 def show_template():
     st.title("Template")
@@ -35,7 +37,7 @@ def show_template():
             need_increment = True
 
         output = ""
-        for line in enter_lines.split("\n"):
+        for line in split(enter_lines):
             format_line = enter_template.replace("{REPLACE}", line)
             if need_increment:
                 format_line = format_line.replace(

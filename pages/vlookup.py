@@ -1,5 +1,7 @@
 import streamlit as st
 
+from pages.splitter import split
+
 
 def show_vlookup():
     st.title("Vlookup")
@@ -43,7 +45,7 @@ def show_vlookup():
 
 
 def _to_array(input: str, split_str: str):
-    return [line.split(split_str) for line in input.split("\n")]
+    return [line.split(split_str) for line in split(input)]
 
 
 def _col_index(inputs, search_by_input):

@@ -1,5 +1,7 @@
 import streamlit as st
 
+from pages.splitter import split
+
 
 def show_list_conversion():
     st.title("List conversion")
@@ -17,7 +19,7 @@ def show_list_conversion():
     if enter_list:
         if selected_option == "Double Quotes":
             output = ""
-            for item in enter_list.split("\n"):
+            for item in split(enter_list):
                 format_item = f'"{item}",'
                 output += format_item + "\n"
 
@@ -25,7 +27,7 @@ def show_list_conversion():
 
         elif selected_option == "Bash Array":
             output = "("
-            for item in enter_list.split("\n"):
+            for item in split(enter_list):
                 format_item = f'"{item}" '
                 output += format_item
 
@@ -36,7 +38,7 @@ def show_list_conversion():
 
         elif selected_option == "Key Value":
             output = ""
-            for item in enter_list.split("\n"):
+            for item in split(enter_list):
                 format_item = f'"{item}": "",'
                 output += format_item + "\n"
 

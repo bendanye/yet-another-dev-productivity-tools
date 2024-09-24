@@ -1,5 +1,7 @@
 import streamlit as st
 
+from pages.splitter import split
+
 
 # Function to manage the app's state
 def show_transformation():
@@ -37,7 +39,7 @@ def show_transformation():
 
                     if from_value and output_text:
                         output = ""
-                        for item in output_text.split("\n"):
+                        for item in split(output_text):
                             output += item.replace(from_value, to_value) + "\n"
 
                         output_text = output.rstrip()
@@ -50,7 +52,7 @@ def show_transformation():
                     )
                     if split_str and index and output_text:
                         output = ""
-                        for item in output_text.split("\n"):
+                        for item in split(output_text):
                             output += item.split(split_str)[int(index)] + "\n"
 
                         output_text = output.rstrip()
@@ -65,7 +67,7 @@ def show_transformation():
                     )
                     if char:
                         output = ""
-                        for item in output_text.split("\n"):
+                        for item in split(output_text):
                             value = item.rsplit(char, 1)[1]
                             if is_include_last_character:
                                 value = char + value

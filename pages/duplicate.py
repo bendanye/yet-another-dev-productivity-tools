@@ -1,5 +1,7 @@
 import streamlit as st
 
+from pages.splitter import split
+
 
 def show_duplicate():
     st.title("Duplicate")
@@ -18,7 +20,7 @@ def show_duplicate():
         if enter_list:
             output = ""
             unique_lines = set()
-            for item in enter_list.split("\n"):
+            for item in split(enter_list):
                 if item in unique_lines:
                     output += item + "\n"
 
@@ -40,7 +42,7 @@ def show_duplicate():
             output = ""
             if selected_result_option == "Index":
                 unique_lines = set()
-                for item in enter_list.split("\n"):
+                for item in split(enter_list):
                     split_item = item.split(split_str)[int(index)]
                     if split_item in unique_lines:
                         output += split_item + "\n"
@@ -49,7 +51,7 @@ def show_duplicate():
 
             elif selected_result_option == "Whole Line":
                 dict = {}
-                for item in enter_list.split("\n"):
+                for item in split(enter_list):
                     split_item = item.split(split_str)[int(index)]
                     records = dict.get(split_item, [])
                     records.append(item)
