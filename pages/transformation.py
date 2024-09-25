@@ -29,7 +29,7 @@ def show_transformation():
             with cols[0]:
                 selected = st.selectbox(
                     f"Row {i + 1}",
-                    ["Replace", "Split", "String After Last Character"],
+                    ["Replace", "Split", "String After Last Character", "Break Lines"],
                     key=f"dropdown_{i}",
                 )
                 if selected == "Replace":
@@ -75,6 +75,17 @@ def show_transformation():
                             output += value + "\n"
 
                         output_text = output.rstrip()
+
+                elif selected == "Break Lines":
+                    output = ""
+                    for item in split(output_text):
+                        if "\\n" in item:
+                            for sub_item in item.split("\\n"):
+                                output += sub_item + "\n"
+                        else:
+                            output += item + "\n"
+
+                    output_text = output
 
             with cols[1]:
                 if st.button(f"Delete Row {i + 1}", key=f"delete_{i}"):
