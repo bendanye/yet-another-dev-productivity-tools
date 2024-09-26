@@ -12,7 +12,7 @@ def show_list_conversion():
     enter_list = col1.text_area("List", height=500)
     selected_option = col2.radio(
         "Option",
-        ["Double Quotes", "Bash Array", "Key Value"],
+        ["Double Quotes", "Bash Array", "Key Value", "Single Line with Line Break"],
         index=None,
     )
 
@@ -42,6 +42,15 @@ def show_list_conversion():
                 format_item = f'"{item}": "",'
                 output += format_item + "\n"
 
+            col3.code(output, language="python")
+
+        elif selected_option == "Single Line with Line Break":
+            output = ""
+            for item in split(enter_list):
+                format_item = f"{item}\\n"
+                output += format_item
+
+            output = output[:-2]
             col3.code(output, language="python")
 
 
