@@ -12,7 +12,7 @@ def show_list_conversion():
     enter_list = col1.text_area("List", height=500)
     selected_option = col2.radio(
         "Option",
-        ["Double Quotes", "Bash Array", "Key Value", "Single Line with Line Break"],
+        ["Double Quotes", "Bash Array", "Key Value", "Single Line with Line Break", "Bash Env Var", "Spring Boot Env Var"],
         index=None,
     )
 
@@ -53,6 +53,23 @@ def show_list_conversion():
             output = output[:-2]
             col3.code(output, language="python")
 
+        elif selected_option == "Bash Env Var":
+            output = ""
+            for item in split(enter_list):
+                format_item = item.replace(".", "_").upper()
+                output += format_item + "\n"
+
+            output = output[:-1]
+            col3.code(output, language="python")
+
+        elif selected_option == "Spring Boot Env Var":
+            output = ""
+            for item in split(enter_list):
+                format_item = item.replace("_", ".").lower()
+                output += format_item + "\n"
+
+            output = output[:-1]
+            col3.code(output, language="python")
 
 if __name__ == "__main__":
     show_list_conversion()
