@@ -12,12 +12,31 @@ def show_list_conversion():
     enter_list = col1.text_area("List", height=500)
     selected_option = col2.radio(
         "Option",
-        ["Double Quotes", "Bash Array", "Key Value", "Single Line with Line Break", "Bash Env Var", "Bash Env Var (Export)", "Spring Boot Env Var"],
+        [
+            "Single Quotes",
+            "Double Quotes",
+            "Bash Array",
+            "SQL IN Params",
+            "Key Value",
+            "Single Line with Line Break",
+            "Bash Env Var",
+            "Bash Env Var (Export)",
+            "Ansible Values",
+            "Spring Boot Env Var",
+        ],
         index=None,
     )
 
     if enter_list:
-        if selected_option == "Double Quotes":
+        if selected_option == "Single Quotes":
+            output = ""
+            for item in split(enter_list):
+                format_item = f"'{item}',"
+                output += format_item + "\n"
+
+            col3.code(output, language="python")
+
+        elif selected_option == "Double Quotes":
             output = ""
             for item in split(enter_list):
                 format_item = f'"{item}",'
@@ -32,6 +51,17 @@ def show_list_conversion():
                 output += format_item
 
             output = output[:-1]
+            output += ")"
+
+            col3.code(output, language="bash", wrap_lines=True)
+
+        elif selected_option == "SQL IN Params":
+            output = "("
+            for item in split(enter_list):
+                format_item = f"'{item}', "
+                output += format_item
+
+            output = output[:-2]
             output += ")"
 
             col3.code(output, language="bash", wrap_lines=True)
@@ -71,6 +101,14 @@ def show_list_conversion():
             output = output[:-1]
             col3.code(output, language="python")
 
+        elif selected_option == "Ansible Values":
+            output = ""
+            for item in split(enter_list):
+                format_item = '"{{ ' + item + ' }}"'
+                output += format_item + "\n"
+
+            col3.code(output, language="python")
+
         elif selected_option == "Spring Boot Env Var":
             output = ""
             for item in split(enter_list):
@@ -79,6 +117,7 @@ def show_list_conversion():
 
             output = output[:-1]
             col3.code(output, language="python")
+
 
 if __name__ == "__main__":
     show_list_conversion()
