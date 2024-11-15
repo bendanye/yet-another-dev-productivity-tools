@@ -8,3 +8,4 @@ from pages.compare_lists import show_compare_lists
 from pages.yaml_key_comparator_page import show_yaml_key_comparator
 from pages.url_query_params import show_url_query_params
 from pages.vlookup import show_vlookup
+from pages.transpose import show_transpose
