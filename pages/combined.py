@@ -3,8 +3,8 @@ import streamlit as st
 from pages.splitter import split
 
 
-def show_transpose():
-    st.title("Transpose")
+def show_combined():
+    st.title("Combined")
     st.write(
         "This tool is to convert both set of data from each row into combined a single row"
     )
@@ -43,4 +43,4 @@ def _show_example():
 
 
 if __name__ == "__main__":
-    show_transpose()
+    show_combined()
