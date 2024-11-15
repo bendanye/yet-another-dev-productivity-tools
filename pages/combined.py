@@ -20,13 +20,17 @@ def show_combined():
         ds1_input = st.text_area("Data Set 1", height=400, key="ds1_input")
     with fields_columns[1]:
         ds2_input = st.text_area("Data Set 2", height=400, key="ds2_input")
+    with fields_columns[2]:
+        combined_str = st.text_input(
+            "Combined Delimiter (Optional)", key="combined_str_input"
+        )
 
     if ds1_input and ds2_input:
         with fields_columns[2]:
             output = ""
             for line1 in split(ds1_input):
                 for line2 in split(ds2_input):
-                    output += line1 + ";" + line2 + "\n"
+                    output += line1 + combined_str + line2 + "\n"
 
             st.write("Result")
             st.code(output, language="python")
@@ -35,6 +39,7 @@ def show_combined():
 def _clear_inputs():
     st.session_state.ds1_input = ""
     st.session_state.ds2_input = ""
+    st.session_state.combined_str_input = ""
 
 
 def _show_example():
