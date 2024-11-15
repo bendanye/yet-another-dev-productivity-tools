@@ -3,11 +3,9 @@ import streamlit as st
 from pages.splitter import split
 
 
-def show_vlookup():
-    st.title("Vlookup")
-    st.write(
-        "This tool is to replicate the Excel vlookup without having enter those formula"
-    )
+def show_filter():
+    st.title("Filter")
+    st.write("Retrieve rows that matched")
 
     columns = st.columns([1, 6])
     with columns[0]:
@@ -89,4 +87,4 @@ def _show_example():
 
 
 if __name__ == "__main__":
-    show_vlookup()
+    show_filter()
