@@ -3,8 +3,8 @@ import streamlit as st
 from pages.splitter import split
 
 
-def show_list_conversion():
-    st.title("List conversion")
+def show_conversion():
+    st.title("Conversion")
     st.write("This tool is to help to transform each line of string to selected option")
 
     col1, col2, col3 = st.columns(3)
@@ -132,4 +132,4 @@ def show_list_conversion():
 
 
 if __name__ == "__main__":
-    show_list_conversion()
+    show_conversion()
