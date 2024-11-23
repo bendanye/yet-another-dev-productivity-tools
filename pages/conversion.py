@@ -24,6 +24,7 @@ def show_conversion():
             "Ansible Values",
             "Spring Boot Env Var",
             "Lines Break",
+            "Remove extra Line Break",
         ],
         index=None,
     )
@@ -127,6 +128,13 @@ def show_conversion():
                         output += sub_item + "\n"
                 else:
                     output += item + "\n"
+
+            col3.code(output, language="python")
+        elif selected_option == "Remove extra Line Break":
+            output = ""
+            for item in split(enter_list):
+                if item != "\n":
+                    output += item.strip() + "\n"
 
             col3.code(output, language="python")
 
