@@ -81,8 +81,7 @@ def show_transformation():
                     st.session_state.rows.remove(i)
                     st.rerun()  # Refresh to update rows
 
-    # Read-only text area
-    st.text_area("Output", value=output_text, disabled=True)
+    st.code(output_text, language="python")
 
 
 if __name__ == "__main__":
