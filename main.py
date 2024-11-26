@@ -3,7 +3,7 @@ from streamlit_navigation_bar import st_navbar
 import streamlit as st
 import pages as pg
 
-st.set_page_config(initial_sidebar_state="collapsed")
+st.set_page_config(initial_sidebar_state="collapsed", page_title="DPT")
 
 OPTIONS = {"show_menu": False, "show_sidebar": False, "hide_nav": True}
 
