@@ -1,5 +1,6 @@
 import streamlit as st
 import time
+import pexpect
 
 
 def show_command_polling():
@@ -9,8 +10,11 @@ def show_command_polling():
     if "clicked" not in st.session_state:
         st.session_state.clicked = False
 
-    command = st.text_area("Command")
+    command = st.text_input("Command")
     wait_seconds = st.text_input("Wait for how many second(s) before rerun command")
+    output_file = st.text_input(
+        "File to create/append containing the output of the command"
+    )
 
     if st.session_state.clicked:
         st.button("Stop", on_click=click_button)
@@ -19,10 +23,18 @@ def show_command_polling():
 
     if command and wait_seconds:
         while st.session_state.clicked:
+            if output_file:
+                with open(output_file, "ab") as file:
+                    pexpect.run(command, logfile=file)
+            else:
+                output = pexpect.run(command)
+                st.code(output, language="python")
+
             st.code(
                 f"Wait for {wait_seconds} seconds before rerun the command",
                 language="python",
             )
+
             time.sleep(int(wait_seconds))
 
 
