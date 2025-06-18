@@ -15,6 +15,16 @@ python3 -m venv .venv
 
 ### Install required library
 
+#### Windows
+
+```powershell
+.venv\Scripts\Activate.ps1
+
+pip install -r requirements.txt
+```
+
+#### Mac
+
 ```shell
 source .venv/bin/activate
 
@@ -23,10 +33,16 @@ pip install -r requirements.txt
 
 ### Run the program
 
-```shell
-source .venv/bin/activate
+#### Windows
 
-streamlit run main.py
+```powershell
+.\run.ps1
+```
+
+#### Mac
+
+```shell
+./run.sh
 ```
 
 ## Features
