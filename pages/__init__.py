@@ -10,3 +10,4 @@ from pages.url_query_params import show_url_query_params
 from pages.combined import show_combined
 from pages.filter import show_filter
 from pages.command_polling import show_command_polling
+from pages.others import show_others

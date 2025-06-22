@@ -40,10 +40,7 @@ page = st_navbar(
         "Compare Lists",
         "Combined",
         "Filter",
-        "Copy Json inside json",
-        "Compare Yaml Keys",
-        "URL Query Params",
-        "Command Polling",
+        "Others",
     ],
     styles=STYLES,
     options=OPTIONS,
@@ -58,10 +55,7 @@ functions = {
     "Compare Lists": pg.show_compare_lists,
     "Combined": pg.show_combined,
     "Filter": pg.show_filter,
-    "Copy Json inside json": pg.show_copy_json,
-    "Compare Yaml Keys": pg.show_yaml_key_comparator,
-    "URL Query Params": pg.show_url_query_params,
-    "Command Polling": pg.show_command_polling,
+    "Others": pg.show_others,
 }
 
 if "page" in st.query_params:
