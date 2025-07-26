@@ -25,6 +25,9 @@ def show_conversion():
             "Lines Break",
             "Single Line with Line Break",
             "Remove extra Line Break",
+            "Uppercase",
+            "Lowercase",
+            "Start Case",
         ],
         index=None,
     )
@@ -130,11 +133,36 @@ def show_conversion():
                     output += item + "\n"
 
             col3.code(output, language="python")
+
         elif selected_option == "Remove extra Line Break":
             output = ""
             for item in split(enter_list):
                 if item != "\n":
                     output += item.strip() + "\n"
+
+            col3.code(output, language="python")
+
+        elif selected_option == "Uppercase":
+            output = ""
+            for item in split(enter_list):
+                if item != "\n":
+                    output += item.upper() + "\n"
+
+            col3.code(output, language="python")
+
+        elif selected_option == "Lowercase":
+            output = ""
+            for item in split(enter_list):
+                if item != "\n":
+                    output += item.lower() + "\n"
+
+            col3.code(output, language="python")
+
+        elif selected_option == "Start Case":
+            output = ""
+            for item in split(enter_list):
+                if item != "\n":
+                    output += item.title() + "\n"
 
             col3.code(output, language="python")
 
